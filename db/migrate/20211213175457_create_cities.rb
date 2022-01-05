@@ -6,7 +6,6 @@ class CreateCities < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :summary
       t.string :content
-      t.integer :likes
 
       t.timestamps
     end

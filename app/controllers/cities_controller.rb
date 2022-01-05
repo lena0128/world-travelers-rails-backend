@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 
     def index
-        cities = City.all
+        cities = City.all.order(created_at: :desc)
         render json: cities, key_transform: :camel_lower
     end
 
@@ -16,6 +16,7 @@ class CitiesController < ApplicationController
             render json: city, key_transform: :camel_lower
         else
             render json: {message: "City could not be saved. Please try again."}
+        end
     end
 
     def update
@@ -35,7 +36,7 @@ class CitiesController < ApplicationController
 
     private
     def city_params
-        params.require(:city).permit(:name, :country, :image, :summary, :content, :likes)
+        params.require(:city).permit(:name, :country, :image, :summary, :content)
     end
 
 end

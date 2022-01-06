@@ -138,3 +138,11 @@ Guide.create([
         city_id: "1"
     }
 ])
+
+User.create([
+    {
+        username: "lena123",
+        email: "lena123@gmail.com",
+        password_digest: "123456"
+    }
+])
